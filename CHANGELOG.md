@@ -1,5 +1,18 @@
 # Changelog – chess-figuren-guess
 
+## 2026-09-30 – Echtes Ratespiel (`main_quiz.cpp`)
+
+Neue Version als eigene Datei `main_quiz.cpp` – die originale `main.cpp` bleibt unverändert.
+
+- **Menü** mit drei Modi: *Erkunden* (Koordinate → Figur), *Quiz: Welche Figur steht auf dem Feld?*, *Quiz: Wo steht die Figur?*
+- **Quiz** mit 10 zufälligen Fragen und Punktestand (`<random>` / `mt19937`). Antworten wie `Turm`, `turm`, `T`, `weisser Turm`, `laufer` werden akzeptiert.
+- **Brett mit Figuren**: `zeichnen(true)` zeigt die Startaufstellung (K D T L S B, Weiß groß, Schwarz klein).
+- **`Figur`-Objekte werden jetzt wirklich benutzt**: `Schachbrett` baut die 32 Figuren in einer Schleife als `vector<Figur>` auf – die doppelten, von Hand getippten Arrays sind weg.
+- **Bugfix**: Bei Eingabeende (Ctrl+Z / Ctrl+D) lief das Programm vorher in eine Endlosschleife. Jetzt wird mit `getline` gelesen und sauber beendet.
+- Spielername wird abgefragt statt fest `"bob:"`.
+
+---
+
 ## 2026-06-02 – Code-Verbesserungen
 
 ### Übersicht
